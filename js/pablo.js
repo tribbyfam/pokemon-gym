@@ -32,11 +32,23 @@ function createPokemon(id) {
             pokemon = new Pokemon2(res.name, res.stats[5].base_stat, res.stats[4].base_stat, res.stats[3].base_stat, abilitiesArr, sprite);
             trainer2.pokemons.push(pokemon);
 
+            console.log(pokemon2[0].name)
+
             // anna's code
-            document.getElementById("hp-jigglypuf").innerHTML=`${id},${res.stats[5].base_stat}`
-            document.getElementById("attack-jigglypuf").innerHTML=`${pokemon.attack}`
-            document.getElementById("defence-jigglypuf").innerHTML=`${pokemon.defense}`
-            document.getElementById("abilities-jigglypuf").innerHTML=`${}`
+            document.getElementById("hp-jigglypuf").innerHTML=trainer2.pokemons[1].hp
+            document.getElementById("attack-jigglypuf").innerHTML=trainer2.pokemons[1].attack
+            document.getElementById("defence-jigglypuf").innerHTML=trainer2.pokemons[1].defense
+            document.getElementById("abilities-jigglypuf").innerHTML=trainer2.pokemons[1].abilities
+
+            document.getElementById("hp-mew").innerHTML=trainer2.pokemons[0].hp
+            document.getElementById("attack-mew").innerHTML=trainer2.pokemons[0].attack
+            document.getElementById("defence-mew").innerHTML=trainer2.pokemons[0].defense
+            document.getElementById("abilities-mew").innerHTML=trainer2.pokemons[0].abilities
+
+            document.getElementById("hp-charizard").innerHTML=trainer2.pokemons[2].hp
+            document.getElementById("attack-charizard").innerHTML=trainer2.pokemons[2].attack
+            document.getElementById("defence-charizard").innerHTML=trainer2.pokemons[2].defense
+            document.getElementById("abilities-charizard").innerHTML=trainer2.pokemons[2].abilities
 
             //generate content
             // let container = document.getElementById("container");

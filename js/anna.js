@@ -60,8 +60,7 @@ let trainer = new Trainer();
 
 
   trainer.pokemon.push(pokemon251);
-  pokemon251.grab();
-  console.log(`trainer1`, trainer);
+
 })
 
 .catch(function (error) {
@@ -118,7 +117,6 @@ axios.get('http://fizal.me/pokeapi/api/392.json')
   let myDefence = res.stats[3].base_stat;
   let myPic = res.sprites.front_default;
 
-  console.log("HELLO");
   
   let newArray = [];
   for (let i=0; i<res.abilities.length; i++) {
@@ -135,15 +133,9 @@ axios.get('http://fizal.me/pokeapi/api/392.json')
 
 
   trainer.pokemon.push(pokemon392);
-  pokemon392.grab();
-  console.log("trainer1===========");
+
 })
 
 .catch(function (error) {
   console.log(error);
 });
-
-
-
-
-console.log(trainer);
