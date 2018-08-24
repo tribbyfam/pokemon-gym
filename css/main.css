@@ -11,6 +11,10 @@ body {
 nav {
   position: fixed; }
 
+  .offsetMore{
+    margin-left: .25rem !important;
+  }
+
 .hero {
   width: 100vw;
   height: 100vh;
