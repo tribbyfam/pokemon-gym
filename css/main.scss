@@ -1,17 +1,15 @@
 
-
+%background-color-main{
+  background-color: rgb(70, 36, 36);
+}
 %nav-text-color{
   color: rgb(241, 89, 114);
 }
 
 body{
   margin: 0;
-  background-color: rgb(70, 36, 36);
-}
-.box{
-  background-color: f4f4f4;
-  padding: 0;
-  text-align: center;
+  @extend %background-color-main;
+  font-weight: 900;
 }
 
 nav{
@@ -47,10 +45,27 @@ nav{
 .nav-text{
   color: black;
   font-size: 1.2em;
+  font-weight: bold;
 }
 
 #logo{
-  height: 10vh;
-  width: 7vw;
-  margin-top: 5px;
+  height: 7vh;
+  width: 5vw;
+  margin-top: 1px;
+}
+.card-imgs{
+  height: 40vh;
+  width: 40vw;
+}
+h6{
+  font-weight: bold;
+}
+.inner-card{
+  background-color: rgb(226, 172, 181);
+}
+.stat{
+  background-color: rgb(245, 203, 126);
+}
+.val{
+  background-color: rgb(142, 189, 142);
 }

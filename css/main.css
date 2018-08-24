@@ -1,14 +1,12 @@
+body {
+  background-color: #462424; }
+
 .hero h1, .hero h3 {
   color: #f15972; }
 
 body {
   margin: 0;
-  background-color: #462424; }
-
-.box {
-  background-color: f4f4f4;
-  padding: 0;
-  text-align: center; }
+  font-weight: 900; }
 
 nav {
   position: fixed; }
@@ -37,11 +35,28 @@ nav {
 
 .nav-text {
   color: black;
-  font-size: 1.2em; }
+  font-size: 1.2em;
+  font-weight: bold; }
 
 #logo {
-  height: 10vh;
-  width: 7vw;
-  margin-top: 5px; }
+  height: 7vh;
+  width: 5vw;
+  margin-top: 1px; }
+
+.card-imgs {
+  height: 40vh;
+  width: 40vw; }
+
+h6 {
+  font-weight: bold; }
+
+.inner-card {
+  background-color: #e2acb5; }
+
+.stat {
+  background-color: #f5cb7e; }
+
+.val {
+  background-color: #8ebd8e; }
 
 /*# sourceMappingURL=main.css.map */
