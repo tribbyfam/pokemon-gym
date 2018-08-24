@@ -1,0 +1,28 @@
+
+
+
+
+body{
+  margin: 0;
+  background-color: rgb(70, 36, 36);
+}
+
+.hero{
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  background-image: url("images/hero-background.jpg");
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+
+.hero h1{
+  font-size: 5em;
+  margin: 0;
+  margin-bottom: 0.5em;
+}
