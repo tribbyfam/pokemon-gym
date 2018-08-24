@@ -1,4 +1,4 @@
-.hero h1, .hero h3, .nav-text {
+.hero h1, .hero h3 {
   color: #f15972; }
 
 body {
@@ -10,6 +10,9 @@ body {
   padding: 0;
   text-align: center; }
 
+nav {
+  position: fixed; }
+
 .hero {
   width: 100vw;
   height: 100vh;
@@ -17,7 +20,7 @@ body {
   justify-content: center;
   align-items: center;
   text-align: center;
-  background-image: url("images/hero-background.jpg");
+  background-image: url("images/hero-wallpaper.jpg");
   background-size: cover;
   background-position: center center;
   background-repeat: no-repeat;
@@ -31,5 +34,14 @@ body {
 .hero h3 {
   font-size: 1.6em;
   margin: 0; }
+
+.nav-text {
+  color: black;
+  font-size: 1.2em; }
+
+#logo {
+  height: 10vh;
+  width: 7vw;
+  margin-top: 5px; }
 
 /*# sourceMappingURL=main.css.map */
