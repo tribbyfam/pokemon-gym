@@ -29,8 +29,8 @@ function createPokemon(id) {
             //get sprites
             let sprite = `https://img.pokemondb.net/sprites/black-white/anim/normal/${res.name}.gif`;
 
-            pokemon = new Pokemon(res.name, res.stats[5].base_stat, res.stats[4].base_stat, res.stats[3].base_stat, abilitiesArr, sprite);
-            trainer.pokemons.push(pokemon);
+            pokemon = new Pokemon2(res.name, res.stats[5].base_stat, res.stats[4].base_stat, res.stats[3].base_stat, abilitiesArr, sprite);
+            trainer2.pokemons.push(pokemon);
 
             //generate content
             let container = document.getElementById("container");
@@ -92,7 +92,7 @@ function createPokemon(id) {
 
         });
 }
-class Trainer {
+class Trainer2 {
     constructor(name, pokemons) {
         this.name = name;
         this.pokemons = pokemons;
@@ -112,7 +112,7 @@ class Trainer {
 
 }
 
-class Pokemon {
+class Pokemon2 {
     constructor(name, hp, attack, defense, abilities, sprite) {
         this.name = name;
         this.hp = hp;
@@ -135,7 +135,7 @@ let padId = id => {
     }
     return s;
 };
-let trainer = new Trainer("Pablo", []);
+let trainer2 = new Trainer2("Pablo", []);
 createPokemon(6);
 createPokemon(39);
 createPokemon(151);
