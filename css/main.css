@@ -58,9 +58,11 @@ h6 {
   background-color: #e2acb5; }
 
 .stat {
-  background-color: #f5cb7e; }
+  background-color: #f5cb7e !important; 
+
+}
 
 .val {
-  background-color: #8ebd8e; }
+  background-color: #8ebd8e !important; }
 
 /*# sourceMappingURL=main.css.map */
