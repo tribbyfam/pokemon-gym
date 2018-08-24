@@ -33,42 +33,29 @@ function createPokemon(id) {
             trainer2.pokemons.push(pokemon);
 
             // anna's code
-            if(id === 6){
-                document.getElementById("hp-charizard").innerHTML= pokemon.hp
-                document.getElementById("attack-charizard").innerHTML=pokemon.attack
-                document.getElementById("defence-charizard").innerHTML= pokemon.defense
-                document.getElementById("abilities-charizard").innerHTML=pokemon.abilities
-                console.log(pokemon.name);
-                
-            } else if( id === 39){
-                document.getElementById("hp-jigglypuf").innerHTM= pokemon.hp
-                document.getElementById("attack-jigglypuf").innerHTM= pokemon.attack
-                document.getElementById("defence-jigglypuf").innerHTM= pokemon.defense
-                document.getElementById("abilities-jigglypuf").innerHTM= pokemon.abilities
+            if (id === 6) {
+                document.getElementById("hp-charizard").innerHTML = pokemon.hp
+                document.getElementById("attack-charizard").innerHTML = pokemon.attack
+                document.getElementById("defence-charizard").innerHTML = pokemon.defense
+                document.getElementById("abilities-charizard").innerHTML = pokemon.abilities
                 console.log(pokemon.name);
 
-            }else if (id === 151){
-                document.getElementById("hp-mew").innerHTML=pokemon.hp
-                document.getElementById("attack-mew").innerHTML=pokemon.attack
-                document.getElementById("defence-mew").innerHTML=pokemon.defense
-                document.getElementById("abilities-mew").innerHTML=pokemon.abilities
+            } else if (id === 39) {
+                document.getElementById("hp-jigglypuf").innerHTML = pokemon.hp
+                document.getElementById("attack-jigglypuf").innerHTML = pokemon.attack
+                document.getElementById("defence-jigglypuf").innerHTML = pokemon.defense
+                document.getElementById("abilities-jigglypuf").innerHTML = pokemon.abilities
+                console.log(pokemon.hp);
+
+            } else if (id === 151) {
+                document.getElementById("hp-mew").innerHTML = pokemon.hp
+                document.getElementById("attack-mew").innerHTML = pokemon.attack
+                document.getElementById("defence-mew").innerHTML = pokemon.defense
+                document.getElementById("abilities-mew").innerHTML = pokemon.abilities
                 console.log(pokemon.name);
 
-        
+
             }
-       
-            const tbody = document.getElementById(`tbody${id}`);
-
-            pokemon.abilities.forEach(element => {
-                let tr = document.createElement("tr");
-                tr.innerHTML = `<td>
-                                <a href="">
-                                    <div>${element}</div>
-                                </a>
-                            </td>`;
-                tbody.appendChild(tr);
-            });
-
 
         })
         .catch(err => {
@@ -123,8 +110,3 @@ let trainer2 = new Trainer2("Pablo", []);
 createPokemon(6);
 createPokemon(39);
 createPokemon(151);
-
-
-// setTimeout(() => {
-//     console.log(trainer.get("mew"));
-// }, 3000);
