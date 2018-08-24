@@ -1,19 +1,24 @@
 body {
-  background-color: #462424; }
+  background-color: #462424;
+}
 
-.hero h1, .hero h3 {
-  color: #f15972; }
+.hero h1,
+.hero h3 {
+  color: #f15972;
+}
 
 body {
   margin: 0;
-  font-weight: 900; }
+  font-weight: 900;
+}
 
 nav {
-  position: fixed; }
+  position: fixed;
+}
 
-  .offsetMore{
-    margin-left: .25rem !important;
-  }
+.offsetMore {
+  margin-left: .25rem !important;
+}
 
 .hero {
   width: 100vw;
@@ -26,43 +31,51 @@ nav {
   background-size: cover;
   background-position: center center;
   background-repeat: no-repeat;
-  background-attachment: fixed; }
+  background-attachment: fixed;
+}
 
 .hero h1 {
   font-size: 5em;
   margin: 0;
-  margin-bottom: 0.5em; }
+  margin-bottom: 0.5em;
+}
 
 .hero h3 {
   font-size: 1.6em;
-  margin: 0; }
+  margin: 0;
+}
 
 .nav-text {
   color: black;
   font-size: 1.2em;
-  font-weight: bold; }
+  font-weight: bold;
+}
 
 #logo {
   height: 7vh;
   width: 5vw;
-  margin-top: 1px; }
+  margin-top: 1px;
+}
 
 .card-imgs {
   height: 40vh;
-  width: 40vw; }
+  width: 40vw;
+}
 
 h6 {
-  font-weight: bold; }
+  font-weight: bold;
+}
 
 .inner-card {
-  background-color: #e2acb5; }
+  background-color: #e2acb5;
+}
 
 .stat {
-  background-color: #f5cb7e !important; 
-
+  background-color: #f5cb7e !important;
 }
 
 .val {
-  background-color: #8ebd8e !important; }
+  background-color: #8ebd8e !important;
+}
 
 /*# sourceMappingURL=main.css.map */
