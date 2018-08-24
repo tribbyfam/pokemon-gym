@@ -40,11 +40,16 @@ let trainer = new Trainer();
 .then(function (response) {
   let res = response.data;
   let myPokeName = res.name;
-  // console.log(res);
+  console.log(res);
   let myHp = res.stats[5].base_stat;
   let myAttack = res.stats[4].base_stat;
   let myDefence = res.stats[3].base_stat;
   let myPic = res.sprites.front_default;
+  let myHeight = res.height;
+  let myWeiht = res.weight;
+  let myExtra = res.moves[1].move;
+  let myMove = myExtra.name
+  console.log(myExtra);
   
  let newArray = [];
   for (let i=0; i<res.abilities.length; i++) {
@@ -57,6 +62,8 @@ let trainer = new Trainer();
   document.getElementById("attack-celebi").innerHTML=`${myAttack}`
   document.getElementById("defence-celebi").innerHTML=`${myDefence}`
   document.getElementById("abilities-celebi").innerHTML=`${myAbilities}`
+  document.getElementById("height-celebi").innerHTML=`${myHeight}`
+  document.getElementById("weight-celebi").innerHTML=`${myWeiht}`
 
 
   trainer.pokemon.push(pokemon251);
@@ -79,6 +86,8 @@ axios.get('http://fizal.me/pokeapi/api/730.json')
   let myAttack = res.stats[4].base_stat;
   let myDefence = res.stats[3].base_stat;
   let myPic = res.sprites.front_default;
+  let myHeight = res.height;
+  let myWeiht = res.weight;
 
 
   let newArray = [];
@@ -93,6 +102,8 @@ axios.get('http://fizal.me/pokeapi/api/730.json')
   document.getElementById("attack-primarina").innerHTML=`${myAttack}`
   document.getElementById("defence-primarina").innerHTML=`${myDefence}`
   document.getElementById("abilities-primarina").innerHTML=`${myAbilities}`
+  document.getElementById("height-primarina").innerHTML=`${myHeight}`
+  document.getElementById("weight-primarina").innerHTML=`${myWeiht}`
 
   trainer.pokemon.push(pokemon730);
 
@@ -116,6 +127,8 @@ axios.get('http://fizal.me/pokeapi/api/392.json')
   let myAttack = res.stats[4].base_stat;
   let myDefence = res.stats[3].base_stat;
   let myPic = res.sprites.front_default;
+  let myHeight = res.height;
+  let myWeiht = res.weight;
 
   
   let newArray = [];
@@ -130,6 +143,8 @@ axios.get('http://fizal.me/pokeapi/api/392.json')
   document.getElementById("attack-infernape").innerHTML=`${myAttack}`
   document.getElementById("defence-infernape").innerHTML=`${myDefence}`
   document.getElementById("abilities-infernape").innerHTML=`${myAbilities}`
+  document.getElementById("height-infernape").innerHTML=`${myHeight}`
+  document.getElementById("weight-infernape").innerHTML=`${myWeiht}`
 
 
   trainer.pokemon.push(pokemon392);
