@@ -1,29 +1,5 @@
 // all initializers for materialize
 M.AutoInit();
-document.addEventListener('DOMContentLoaded', function() {
-  var elems = document.querySelectorAll('.sidenav');
-  var instances = M.Sidenav.init(elems, 'isFixed');
-});
-document.addEventListener('DOMContentLoaded', function() {
-  var elems = document.querySelectorAll('.parallax');
-  var instances = M.Parallax.init(elems, 'responsiveThreshold', 100);
-});
-document.addEventListener('DOMContentLoaded', function() {
-  var elems = document.querySelectorAll('.materialboxed');
-  var instances = M.Materialbox.init(elems, 'outDuration');
-});
-
-document.addEventListener('DOMContentLoaded', function() {
-  var elems = document.querySelectorAll('.slider');
-  var instances = M.Slider.init(elems, 'duration', 1500);
-});
-
-document.addEventListener('DOMContentLoaded', function() {
-  var elems = document.querySelectorAll('.collapsible');
-  var instances = M.Collapsible.init(elems, 'accordion');
-});
-
-
 
 
 class Trainer{
@@ -52,26 +28,6 @@ class Pokemon {
     this.abilities = abilities;
     this.picture = picture;
   }
-
-  grab () {
-  let pokeName = document.getElementById("poke-name");
-  let pokeHpStats = document.getElementById("poke-hp");
-  let pokeAttackStats = document.getElementById("poke-attack");
-  let pokeDefenceStats = document.getElementById("poke-defence");
-  let pokeAbilities = document.getElementById("poke-abilities");
-  let pokeImages = document.getElementById("poke-cards");
-  
-  
-  pokeImages.setAttribute("src", this.picture)
- 
-
-  pokeName.innerHTL = `${this.name}`;
-  pokeHpStats.innerHTML = `${this.hp}`;
-  pokeAttackStats.innerHTML = `${this.attack}`;
-  pokeDefenceStats.innerHTML = `${this.defend}`;
-  pokeAbilities.innerHTML = `${this.abilities}`;
-
-  }
   
 }
   
@@ -97,29 +53,11 @@ let trainer = new Trainer();
   let myAbilities = newArray;
   let pokemon251 = new Pokemon( myPokeName,myHp,myAttack,myDefence,myAbilities, myPic)
  
-  document.getElementById("p251").addEventListener("click", function (){
-    trainer.get('celebi').grab();  
-  });
+  document.getElementById("hp-celebi").innerHTML=`${myHp}`
+  document.getElementById("attack-celebi").innerHTML=`${myAttack}`
+  document.getElementById("defence-celebi").innerHTML=`${myDefence}`
+  document.getElementById("abilities-celebi").innerHTML=`${myAbilities}`
 
-  // let event = document.getElementById("p251");
-
-  // for(let i=0; i<btns.length; i++){
-  //   event[i].addEventListener("click",function(){
-  //     let current = document.getElementsByClassName("active");
-  //     current[0].className = current[0].className += " active";
-  //   });
-  // }
-
-  document.getElementById("p251").addEventListener("click", function(){
-    let event = document.getElementById("p251");
-    
-  //  changing attribute of pagination colors
-    if("class"!=="active grey"){
-      event.setAttribute("class", "active grey");
-    } else {
-      event.setAttribute("class"," ");
-    }
-  });
 
   trainer.pokemon.push(pokemon251);
   pokemon251.grab();
@@ -152,34 +90,13 @@ axios.get('http://fizal.me/pokeapi/api/730.json')
 
   let pokemon730 = new Pokemon(myPokeName,myHp,myAttack,myDefence,myAbilities,myPic)
 
+  document.getElementById("hp-primarina").innerHTML=`${myHp}`
+  document.getElementById("attack-primarina").innerHTML=`${myAttack}`
+  document.getElementById("defence-primarina").innerHTML=`${myDefence}`
+  document.getElementById("abilities-primarina").innerHTML=`${myAbilities}`
 
   trainer.pokemon.push(pokemon730);
-  pokemon730.grab();
 
- 
-  document.getElementById("p730").addEventListener("click", function (){
-    trainer.get('primarina').grab();  
-  });
-
-   
-  // let event = document.getElementById("p730");
- 
-  // for(let i=0; i<btns.length; i++){
-  //   event[i].addEventListener("click",function(){
-  //     let current = document.getElementsByClassName("active");
-  //     current[0].className = current[0].className += " active";
-  //   });
-  // }
-
-  // document.getElementById("p730").addEventListener("click", function(){
-  //   let event = document.getElementById("p730");
-    
-  //   if("class"!=="active grey"){
-  //     event.setAttribute("class", "active grey");
-  //   } else {
-  //     event.setAttribute("class"," ");
-  //   }
-  // });
 })
 
 .catch(function (error) {
@@ -210,33 +127,12 @@ axios.get('http://fizal.me/pokeapi/api/392.json')
   let myAbilities = newArray;
  
   let pokemon392 = new Pokemon( myPokeName,myHp,myAttack,myDefence,myAbilities,myPic);
-console.log("2222222222222");
 
-  document.getElementById("p392").addEventListener("click", function (){
-    trainer.get('infernape').grab(); 
-  });
-  console.log("33333333333");
+  document.getElementById("hp-infernape").innerHTML=`${myHp}`
+  document.getElementById("attack-infernape").innerHTML=`${myAttack}`
+  document.getElementById("defence-infernape").innerHTML=`${myDefence}`
+  document.getElementById("abilities-infernape").innerHTML=`${myAbilities}`
 
-  // let event = document.getElementById("p392");
- 
-  // for(let i=0; i<btns.length; i++){
-  //   event[i].addEventListener("click",function(){
-  //     let current = document.getElementsByClassName("active");
-  //     current[0].className = current[0].className += " active";
-  //   });
-  // }
-
-  // document.getElementById("p392").addEventListener("click", function(){
-  //   let event = document.getElementById("p392");
-  //   console.log("444444444444");
-
-  //   if("class"!=="active grey"){
-  //     event.setAttribute("class", "active grey");
-  //   } else {
-  //     event.setAttribute("class"," ");
-  //   }
-  // });
-  
 
   trainer.pokemon.push(pokemon392);
   pokemon392.grab();
