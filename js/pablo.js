@@ -32,45 +32,51 @@ function createPokemon(id) {
             pokemon = new Pokemon2(res.name, res.stats[5].base_stat, res.stats[4].base_stat, res.stats[3].base_stat, abilitiesArr, sprite);
             trainer2.pokemons.push(pokemon);
 
+            // anna's code
+            document.getElementById("hp-jigglypuf").innerHTML=`${id},${res.stats[5].base_stat}`
+            document.getElementById("attack-jigglypuf").innerHTML=`${pokemon.attack}`
+            document.getElementById("defence-jigglypuf").innerHTML=`${pokemon.defense}`
+            document.getElementById("abilities-jigglypuf").innerHTML=`${}`
+
             //generate content
-            let container = document.getElementById("container");
-            container.innerHTML += `
-            <div class="col s12 m4 ">
-            <div class="card">
-                <div class="card-image cardImage" style="background-image: url(${backgroundArr[Math.floor(Math.random() * Math.floor(backgroundArr.length))]})">
-                    <img src="https://assets.pokemon.com/assets/cms2/img/pokedex/full/${padId(id)}.png">
-                    <span class="card-title card-title-style">${pokemon.name}</span>
-                </div>
-                <div class="card-content">
-                    <div class="card-panel red">HP: ${pokemon.hp}</div>
-                    <div class="card-panel red lighten-1">Att: ${pokemon.attack}</div>
-                    <div class="card-panel red lighten-2">Def: ${pokemon.defense}</div>
-                    <div class="card-panel red lighten-3">
-                        <div class="responsive-table table-status-sheet">
-                            <table class="bordered">
-                                <thead>
-                                    <tr>
-                                        <th class="center">Abilities:</th>
-                                        <th id="totalRepos" class="center"></th>
+            // let container = document.getElementById("container");
+            // container.innerHTML += `
+            // <div class="col s12 m4 ">
+            // <div class="card">
+            //     <div class="card-image cardImage" style="background-image: url(${backgroundArr[Math.floor(Math.random() * Math.floor(backgroundArr.length))]})">
+            //         <img src="https://assets.pokemon.com/assets/cms2/img/pokedex/full/${padId(id)}.png">
+            //         <span class="card-title card-title-style">${pokemon.name}</span>
+            //     </div>
+            //     <div class="card-content">
+            //         <div class="card-panel red">HP: ${pokemon.hp}</div>
+            //         <div class="card-panel red lighten-1">Att: ${pokemon.attack}</div>
+            //         <div class="card-panel red lighten-2">Def: ${pokemon.defense}</div>
+            //         <div class="card-panel red lighten-3">
+            //             <div class="responsive-table table-status-sheet">
+            //                 <table class="bordered">
+            //                     <thead>
+            //                         <tr>
+            //                             <th class="center">Abilities:</th>
+            //                             <th id="totalRepos" class="center"></th>
         
-                                    </tr>
-                                </thead>
-                                <tbody id="tbody${id}">
+            //                         </tr>
+            //                     </thead>
+            //                     <tbody id="tbody${id}">
         
-                                </tbody>
-                            </table>
-                        </div>
+            //                     </tbody>
+            //                 </table>
+            //             </div>
                        
-                    </div>
-                    <div class="card-action">
-                        <img src=${sprite}></img>   
-                        <img src=${sprite}></img>                       
-                        <img src=${sprite}></img>                       
+            //         </div>
+            //         <div class="card-action">
+            //             <img src=${sprite}></img>   
+            //             <img src=${sprite}></img>                       
+            //             <img src=${sprite}></img>                       
                 
-                    </div>
-                </div>
+            //         </div>
+            //     </div>
             
-                                    `;
+            //                         `;
 
 
             const tbody = document.getElementById(`tbody${id}`);
