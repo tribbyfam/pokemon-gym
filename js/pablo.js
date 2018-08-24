@@ -32,65 +32,31 @@ function createPokemon(id) {
             pokemon = new Pokemon2(res.name, res.stats[5].base_stat, res.stats[4].base_stat, res.stats[3].base_stat, abilitiesArr, sprite);
             trainer2.pokemons.push(pokemon);
 
-            console.log(pokemon2[0].name)
-
             // anna's code
-            document.getElementById("hp-jigglypuf").innerHTML=trainer2.pokemons[1].hp
-            document.getElementById("attack-jigglypuf").innerHTML=trainer2.pokemons[1].attack
-            document.getElementById("defence-jigglypuf").innerHTML=trainer2.pokemons[1].defense
-            document.getElementById("abilities-jigglypuf").innerHTML=trainer2.pokemons[1].abilities
-
-            document.getElementById("hp-mew").innerHTML=trainer2.pokemons[0].hp
-            document.getElementById("attack-mew").innerHTML=trainer2.pokemons[0].attack
-            document.getElementById("defence-mew").innerHTML=trainer2.pokemons[0].defense
-            document.getElementById("abilities-mew").innerHTML=trainer2.pokemons[0].abilities
-
-            document.getElementById("hp-charizard").innerHTML=trainer2.pokemons[2].hp
-            document.getElementById("attack-charizard").innerHTML=trainer2.pokemons[2].attack
-            document.getElementById("defence-charizard").innerHTML=trainer2.pokemons[2].defense
-            document.getElementById("abilities-charizard").innerHTML=trainer2.pokemons[2].abilities
-
-            //generate content
-            // let container = document.getElementById("container");
-            // container.innerHTML += `
-            // <div class="col s12 m4 ">
-            // <div class="card">
-            //     <div class="card-image cardImage" style="background-image: url(${backgroundArr[Math.floor(Math.random() * Math.floor(backgroundArr.length))]})">
-            //         <img src="https://assets.pokemon.com/assets/cms2/img/pokedex/full/${padId(id)}.png">
-            //         <span class="card-title card-title-style">${pokemon.name}</span>
-            //     </div>
-            //     <div class="card-content">
-            //         <div class="card-panel red">HP: ${pokemon.hp}</div>
-            //         <div class="card-panel red lighten-1">Att: ${pokemon.attack}</div>
-            //         <div class="card-panel red lighten-2">Def: ${pokemon.defense}</div>
-            //         <div class="card-panel red lighten-3">
-            //             <div class="responsive-table table-status-sheet">
-            //                 <table class="bordered">
-            //                     <thead>
-            //                         <tr>
-            //                             <th class="center">Abilities:</th>
-            //                             <th id="totalRepos" class="center"></th>
-        
-            //                         </tr>
-            //                     </thead>
-            //                     <tbody id="tbody${id}">
-        
-            //                     </tbody>
-            //                 </table>
-            //             </div>
-                       
-            //         </div>
-            //         <div class="card-action">
-            //             <img src=${sprite}></img>   
-            //             <img src=${sprite}></img>                       
-            //             <img src=${sprite}></img>                       
+            if(id === 6){
+                document.getElementById("hp-charizard").innerHTML= pokemon.hp
+                document.getElementById("attack-charizard").innerHTML=pokemon.attack
+                document.getElementById("defence-charizard").innerHTML= pokemon.defense
+                document.getElementById("abilities-charizard").innerHTML=pokemon.abilities
+                console.log(pokemon.name);
                 
-            //         </div>
-            //     </div>
-            
-            //                         `;
+            } else if( id === 39){
+                document.getElementById("hp-jigglypuf").innerHTM= pokemon.hp
+                document.getElementById("attack-jigglypuf").innerHTM= pokemon.attack
+                document.getElementById("defence-jigglypuf").innerHTM= pokemon.defense
+                document.getElementById("abilities-jigglypuf").innerHTM= pokemon.abilities
+                console.log(pokemon.name);
 
+            }else if (id === 151){
+                document.getElementById("hp-mew").innerHTML=pokemon.hp
+                document.getElementById("attack-mew").innerHTML=pokemon.attack
+                document.getElementById("defence-mew").innerHTML=pokemon.defense
+                document.getElementById("abilities-mew").innerHTML=pokemon.abilities
+                console.log(pokemon.name);
 
+        
+            }
+       
             const tbody = document.getElementById(`tbody${id}`);
 
             pokemon.abilities.forEach(element => {
