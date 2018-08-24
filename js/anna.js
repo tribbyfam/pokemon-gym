@@ -27,17 +27,17 @@ document.addEventListener('DOMContentLoaded', function() {
 
 
 class Trainer{
-  constructor(firstName="Blue", lastName="Catchum"){
+  constructor(firstName="Blue", lastName="Catchum", pokemon=[]){
     this.firstName=firstName;
     this.lastName= lastName;
-    this.data =[];
+    this.pokemon = pokemon;
   }
 
-  add(pokemon){
-    this.data.push(pokemon)
-  }
+  // add(pokemon){
+  //   this.data.push(pokemon)
+  // }
   get(name){
-    return this.data.find((element) =>{
+    return this.pokemon.find((element) =>{
       return element.name == name
     })
   }
@@ -80,7 +80,7 @@ let trainer = new Trainer();
 
 // api calls requesting data for Celebi
 
-  axios.get('http://fizal.me/pokeapi/api/251.json')
+  axios.get('https://fizal.me/pokeapi/api/251.json')
 .then(function (response) {
   let res = response.data;
   let myPokeName = res.name;
@@ -113,6 +113,7 @@ let trainer = new Trainer();
   document.getElementById("p251").addEventListener("click", function(){
     let event = document.getElementById("p251");
     
+  //  changing attribute of pagination colors
     if("class"!=="active grey"){
       event.setAttribute("class", "active grey");
     } else {
@@ -120,8 +121,9 @@ let trainer = new Trainer();
     }
   });
 
-  trainer.add(pokemon251);
+  trainer.pokemon.push(pokemon251);
   pokemon251.grab();
+  console.log(`trainer1`, trainer);
 })
 
 .catch(function (error) {
@@ -149,9 +151,11 @@ axios.get('http://fizal.me/pokeapi/api/730.json')
   let myAbilities = newArray;
 
   let pokemon730 = new Pokemon(myPokeName,myHp,myAttack,myDefence,myAbilities,myPic)
-  // console.log(pokemon730);
-  // console.log(res);
-  trainer.add(pokemon730);
+
+
+  trainer.pokemon.push(pokemon730);
+  pokemon730.grab();
+
  
   document.getElementById("p730").addEventListener("click", function (){
     trainer.get('primarina').grab();  
@@ -167,15 +171,15 @@ axios.get('http://fizal.me/pokeapi/api/730.json')
   //   });
   // }
 
-  document.getElementById("p730").addEventListener("click", function(){
-    let event = document.getElementById("p730");
+  // document.getElementById("p730").addEventListener("click", function(){
+  //   let event = document.getElementById("p730");
     
-    if("class"!=="active grey"){
-      event.setAttribute("class", "active grey");
-    } else {
-      event.setAttribute("class"," ");
-    }
-  });
+  //   if("class"!=="active grey"){
+  //     event.setAttribute("class", "active grey");
+  //   } else {
+  //     event.setAttribute("class"," ");
+  //   }
+  // });
 })
 
 .catch(function (error) {
@@ -197,7 +201,8 @@ axios.get('http://fizal.me/pokeapi/api/392.json')
   let myDefence = res.stats[3].base_stat;
   let myPic = res.sprites.front_default;
 
-
+  console.log("HELLO");
+  
   let newArray = [];
   for (let i=0; i<res.abilities.length; i++) {
     newArray.push(res.abilities[i].ability.name)
@@ -205,10 +210,12 @@ axios.get('http://fizal.me/pokeapi/api/392.json')
   let myAbilities = newArray;
  
   let pokemon392 = new Pokemon( myPokeName,myHp,myAttack,myDefence,myAbilities,myPic);
+console.log("2222222222222");
 
   document.getElementById("p392").addEventListener("click", function (){
     trainer.get('infernape').grab(); 
   });
+  console.log("33333333333");
 
   // let event = document.getElementById("p392");
  
@@ -219,19 +226,21 @@ axios.get('http://fizal.me/pokeapi/api/392.json')
   //   });
   // }
 
-  document.getElementById("p392").addEventListener("click", function(){
-    let event = document.getElementById("p392");
-    
-    if("class"!=="active grey"){
-      event.setAttribute("class", "active grey");
-    } else {
-      event.setAttribute("class"," ");
-    }
-  });
+  // document.getElementById("p392").addEventListener("click", function(){
+  //   let event = document.getElementById("p392");
+  //   console.log("444444444444");
+
+  //   if("class"!=="active grey"){
+  //     event.setAttribute("class", "active grey");
+  //   } else {
+  //     event.setAttribute("class"," ");
+  //   }
+  // });
   
 
-  trainer.add(pokemon392);
-
+  trainer.pokemon.push(pokemon392);
+  pokemon392.grab();
+  console.log("trainer1===========");
 })
 
 .catch(function (error) {
@@ -239,46 +248,6 @@ axios.get('http://fizal.me/pokeapi/api/392.json')
 });
 
 
-// calling for myDragon pokemon
-let pokeImages = document.getElementById("p635");
-axios.get('http://fizal.me/pokeapi/api/635.json')
-.then(function (response) {
-  let res = response.data;
-  let myPokeName = res.name;
-  let myHp = res.stats[5].base_stat;
-  let myAttack = res.stats[4].base_stat;
-  let myDefence = res.stats[3].base_stat;
-  let myPic = res.sprites.front_default;
 
-
-  let newArray = [];
-  for (let i=0; i<res.abilities.length; i++) {
-    newArray.push(res.abilities[i].ability.name)
-  }
-  let myAbilities = newArray;
- 
-  let pokemon635 = new Pokemon( myPokeName,myHp,myAttack,myDefence,myAbilities,myPic);
-
-  document.getElementById("p635").addEventListener("click", function (){
-    let myDragon = document.getElementById("p635i");
-    myDragon.setAttribute("src",myPic);
-
-  });
-
-  trainer.add(pokemon635);
-
-})
-
-.catch(function (error) {
-  console.log(error);
-});
-
-// let tableValues = document.getElementsByClassName("change");
-// let tableValues = tableValues[0];
-//     tableValues.oncklick = function (){
-//       if(this.name === 'celebi'){
-
-//       }
-//     }
 
 console.log(trainer);
