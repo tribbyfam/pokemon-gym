@@ -8,5 +8,3 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 
-
-document.getElementById("hp-jigglypuf").innerHTML=

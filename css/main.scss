@@ -54,19 +54,11 @@ nav{
   margin-top: 1px;
 }
 .card-imgs{
-  height: 40vh;
-  width: 40vw;
+  height: 40vh !important;
+  width: 40vw !important;
 }
 
 h6{
   font-weight: bold;
 }
-.inner-card{
-  background-color: rgb(226, 172, 181) !important;
-}
-.stat{
-  background-color: rgb(245, 203, 126) !important;
-}
-.val{
-  background-color: rgb(142, 189, 142) !important;
-}
+
