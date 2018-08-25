@@ -20,13 +20,19 @@ class Trainer{
 }
 
 class Pokemon {
-  constructor(name, hp, attack, defend, abilities, picture){
+  constructor(name, hp, attack, defend, abilities, picture, height, weight, move, accuracy, power, priority){
     this.name = name;
     this.hp = hp;
     this.attack = attack;
     this.defend = defend;
     this.abilities = abilities;
     this.picture = picture;
+    this.height = height;
+    this.weight = weight;
+    this.move = move;
+    this.accuracy = accuracy;
+    this.power = power;
+    this. priority = priority;
   }
   
 }
@@ -40,33 +46,50 @@ let trainer = new Trainer();
 .then(function (response) {
   let res = response.data;
   let myPokeName = res.name;
-  console.log(res);
+  // console.log(res);
   let myHp = res.stats[5].base_stat;
   let myAttack = res.stats[4].base_stat;
   let myDefence = res.stats[3].base_stat;
   let myPic = res.sprites.front_default;
   let myHeight = res.height;
-  let myWeiht = res.weight;
+  let myWeight = res.weight;
   let myExtra = res.moves[1].move;
-  let myMove = myExtra.name
-  console.log(myExtra);
+  let myMove = myExtra.name;
+  let myUrl = myExtra.url;
+
+  axios.get(myUrl)
+  .then(function (response) {
+    let extraRes = response.data;
+   
+    let myAccuracy = extraRes.accuracy;
+    let myPower = extraRes.power;
+    let myPriority = extraRes.priority;
+    
+  
   
  let newArray = [];
   for (let i=0; i<res.abilities.length; i++) {
     newArray.push(res.abilities[i].ability.name)
   }
   let myAbilities = newArray;
-  let pokemon251 = new Pokemon( myPokeName,myHp,myAttack,myDefence,myAbilities, myPic)
+  let pokemon251 = new Pokemon( myPokeName,myHp,myAttack,myDefence,myAbilities, myPic, myHeight, myWeight, myMove, myAccuracy, myPower, myPriority)
  
   document.getElementById("hp-celebi").innerHTML=`${myHp}`
   document.getElementById("attack-celebi").innerHTML=`${myAttack}`
   document.getElementById("defence-celebi").innerHTML=`${myDefence}`
   document.getElementById("abilities-celebi").innerHTML=`${myAbilities}`
   document.getElementById("height-celebi").innerHTML=`${myHeight}`
-  document.getElementById("weight-celebi").innerHTML=`${myWeiht}`
+  document.getElementById("weight-celebi").innerHTML=`${myWeight}`
+  document.getElementById("move-celebi").innerHTML=`${myMove}`
+  document.getElementById("move-celebi").innerHTML=`${myAccuracy}`
+  document.getElementById("move-celebi").innerHTML=`${myPower}`
+  document.getElementById("move-celebi").innerHTML=`${myPriority}`
 
+  
 
+  });
   trainer.pokemon.push(pokemon251);
+  
 
 })
 
