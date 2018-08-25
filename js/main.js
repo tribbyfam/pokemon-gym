@@ -7,3 +7,6 @@ document.addEventListener('DOMContentLoaded', function() {
   var instances = M.Collapsible.init(elems, 'onCloseStart');
 });
 
+
+
+document.getElementById("hp-jigglypuf").innerHTML=
