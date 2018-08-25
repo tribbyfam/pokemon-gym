@@ -56,6 +56,12 @@ let trainer = new Trainer();
   let myExtra = res.moves[1].move;
   let myMove = myExtra.name;
   let myUrl = myExtra.url;
+  
+  
+ let newArray = [];
+  for (let i=0; i<res.abilities.length; i++) {
+    newArray.push(res.abilities[i].ability.name)
+  }
 
   axios.get(myUrl)
   .then(function (response) {
@@ -64,13 +70,8 @@ let trainer = new Trainer();
     let myAccuracy = extraRes.accuracy;
     let myPower = extraRes.power;
     let myPriority = extraRes.priority;
-    
-  
-  
- let newArray = [];
-  for (let i=0; i<res.abilities.length; i++) {
-    newArray.push(res.abilities[i].ability.name)
-  }
+      console.log(myPower)
+
   let myAbilities = newArray;
   let pokemon251 = new Pokemon( myPokeName,myHp,myAttack,myDefence,myAbilities, myPic, myHeight, myWeight, myMove, myAccuracy, myPower, myPriority)
  
@@ -81,21 +82,19 @@ let trainer = new Trainer();
   document.getElementById("height-celebi").innerHTML=`${myHeight}`
   document.getElementById("weight-celebi").innerHTML=`${myWeight}`
   document.getElementById("move-celebi").innerHTML=`${myMove}`
-  document.getElementById("move-celebi").innerHTML=`${myAccuracy}`
-  document.getElementById("move-celebi").innerHTML=`${myPower}`
-  document.getElementById("move-celebi").innerHTML=`${myPriority}`
-
-  
+  document.getElementById("accuracy-celebi").innerHTML=`${myAccuracy}`
+  document.getElementById("power-celebi").innerHTML=`${myPower}`
+  document.getElementById("priority-celebi").innerHTML=`${myPriority}`
 
   });
   trainer.pokemon.push(pokemon251);
-  
-
 })
 
 .catch(function (error) {
   console.log(error);
 });
+
+
 
 
 // api calls for Primarina
