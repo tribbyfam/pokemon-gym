@@ -70,7 +70,7 @@ let trainer = new Trainer();
     let myAccuracy = extraRes.accuracy;
     let myPower = extraRes.power;
     let myPriority = extraRes.priority;
-      console.log(myPower)
+      // console.log(myPower)
 
   let myAbilities = newArray;
   let pokemon251 = new Pokemon( myPokeName,myHp,myAttack,myDefence,myAbilities, myPic, myHeight, myWeight, myMove, myAccuracy, myPower, myPriority)
@@ -86,8 +86,9 @@ let trainer = new Trainer();
   document.getElementById("power-celebi").innerHTML=`${myPower}`
   document.getElementById("priority-celebi").innerHTML=`${myPriority}`
 
-  });
   trainer.pokemon.push(pokemon251);
+  });
+ 
 })
 
 .catch(function (error) {
@@ -110,13 +111,24 @@ axios.get('http://fizal.me/pokeapi/api/730.json')
   let myPic = res.sprites.front_default;
   let myHeight = res.height;
   let myWeiht = res.weight;
-
+  let myExtra = res.moves[1].move;
+  let myMove = myExtra.name;
+  let myUrl = myExtra.url;
 
   let newArray = [];
   for (let i=0; i<res.abilities.length; i++) {
     newArray.push(res.abilities[i].ability.name)
   }
   let myAbilities = newArray;
+
+  axios.get(myUrl)
+  .then(function (response) {
+    let extraRes = response.data;
+   
+    let myAccuracy = extraRes.accuracy;
+    let myPower = extraRes.power;
+    let myPriority = extraRes.priority;
+      // console.log(myPower)
 
   let pokemon730 = new Pokemon(myPokeName,myHp,myAttack,myDefence,myAbilities,myPic)
 
@@ -126,8 +138,13 @@ axios.get('http://fizal.me/pokeapi/api/730.json')
   document.getElementById("abilities-primarina").innerHTML=`${myAbilities}`
   document.getElementById("height-primarina").innerHTML=`${myHeight}`
   document.getElementById("weight-primarina").innerHTML=`${myWeiht}`
+  document.getElementById("move-primarina").innerHTML=`${myMove}`
+  document.getElementById("accuracy-primarina").innerHTML=`${myAccuracy}`
+  document.getElementById("power-primarina").innerHTML=`${myPower}`
+  document.getElementById("priority-primarina").innerHTML=`${myPriority}`
 
   trainer.pokemon.push(pokemon730);
+  });
 
 })
 
@@ -151,13 +168,24 @@ axios.get('http://fizal.me/pokeapi/api/392.json')
   let myPic = res.sprites.front_default;
   let myHeight = res.height;
   let myWeiht = res.weight;
-
+  let myExtra = res.moves[1].move;
+  let myMove = myExtra.name;
+  let myUrl = myExtra.url;
   
   let newArray = [];
   for (let i=0; i<res.abilities.length; i++) {
     newArray.push(res.abilities[i].ability.name)
   }
   let myAbilities = newArray;
+
+  axios.get(myUrl)
+  .then(function (response) {
+    let extraRes = response.data;
+   
+    let myAccuracy = extraRes.accuracy;
+    let myPower = extraRes.power;
+    let myPriority = extraRes.priority;
+      // console.log(myPower)
  
   let pokemon392 = new Pokemon( myPokeName,myHp,myAttack,myDefence,myAbilities,myPic);
 
@@ -167,9 +195,13 @@ axios.get('http://fizal.me/pokeapi/api/392.json')
   document.getElementById("abilities-infernape").innerHTML=`${myAbilities}`
   document.getElementById("height-infernape").innerHTML=`${myHeight}`
   document.getElementById("weight-infernape").innerHTML=`${myWeiht}`
-
+  document.getElementById("move-infernape").innerHTML=`${myMove}`
+  document.getElementById("accuracy-infernape").innerHTML=`${myAccuracy}`
+  document.getElementById("power-infernape").innerHTML=`${myPower}`
+  document.getElementById("priority-infernape").innerHTML=`${myPriority}`
 
   trainer.pokemon.push(pokemon392);
+  });
 
 })
 
